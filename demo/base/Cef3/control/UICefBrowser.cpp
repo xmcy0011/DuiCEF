@@ -2,7 +2,8 @@
 #include "UICefBrowser.h"
 
 CCefBrowserUI::CCefBrowserUI()
-	: m_pProcessMessageHandler(new CProcessMessageHandler)
+	: m_bLoadFinish(false)
+	, m_pProcessMessageHandler(new CProcessMessageHandler)
 	, m_pClientHandler(new CCefClientHandler(this))
 {
 	
@@ -79,10 +80,6 @@ void CCefBrowserUI::OnProcessMessageReceived(CefRefPtr<CefProcessMessage> messag
 
 void CCefBrowserUI::OnAfterCreated(CefRefPtr<CefBrowser> browser)
 {
-	// 只执行一次
-	if (m_pBrowser != nullptr)
-		return;
-
 	m_pBrowser = browser;
 
 	// 执行缓存的任务
@@ -93,6 +90,34 @@ void CCefBrowserUI::OnAfterCreated(CefRefPtr<CefBrowser> browser)
 		m_AfterCreatedCacheTasks.pop();
 
 		task();
+	}
+}
+
+void CCefBrowserUI::OnLoadStart()
+{
+	m_bLoadFinish = false;
+}
+
+void CCefBrowserUI::OnLoadEnd(int httpStatusCode)
+{
+	m_bLoadFinish = true;
+
+	// 执行缓存的任务
+	CefCacheTask task;
+	while (!m_LoadEndCacheTasks.empty())
+	{
+		task = move(m_LoadEndCacheTasks.front());
+		m_LoadEndCacheTasks.pop();
+
+		task();
+	}
+}
+
+void CCefBrowserUI::OnLoadError(int errorCode, const CefString& errorText, const CefString& failedUrl)
+{
+	while (!m_LoadEndCacheTasks.empty())
+	{
+		m_LoadEndCacheTasks.pop();
 	}
 }
 
@@ -115,7 +140,14 @@ void CCefBrowserUI::RunJs(CefString JsCode)
 {
 	if (m_pBrowser != nullptr)
 	{
-		m_pBrowser->GetMainFrame()->ExecuteJavaScript(JsCode, "", 0);
+		if (m_bLoadFinish)
+		{
+			m_pBrowser->GetMainFrame()->ExecuteJavaScript(JsCode, "", 0);
+		}
+		else
+		{
+			m_LoadEndCacheTasks.push([JsCode, this]{ RunJs(JsCode); });
+		}
 	}
 	else
 	{
