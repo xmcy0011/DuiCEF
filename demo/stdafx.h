@@ -28,8 +28,10 @@ using namespace Gdiplus;
 
 #ifdef _DEBUG
 	#pragma comment(lib, "Duilib/DuiLib_d.lib")
+	#pragma comment(lib, "duicef/duicef_d.lib")
 #else
 	#pragma comment(lib, "Duilib/DuiLib.lib")
+	#pragma comment(lib, "duicef/duicef.lib")
 #endif
 
 //#include <vld.h>

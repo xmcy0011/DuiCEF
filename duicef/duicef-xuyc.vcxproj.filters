@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{e4362318-f5b5-4f8b-a840-fcff5e1af5e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Cef3">
+      <UniqueIdentifier>{75c35188-ccab-4464-af14-8ae710887ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Cef3\browser">
+      <UniqueIdentifier>{d9454964-cfe4-4888-9e94-84060be0efd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Cef3\common">
+      <UniqueIdentifier>{62e3e159-57ea-438a-80b0-8556820873ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Cef3\control">
+      <UniqueIdentifier>{1f072238-a625-433e-b0fa-a17d15a7f06b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Cef3\renderer">
+      <UniqueIdentifier>{e960f10e-fa8c-4dc9-bd6c-15edcbd79fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\ControlEx">
+      <UniqueIdentifier>{d0a31a82-9fd7-4900-9a28-b06a7cdeda72}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\browser\cef_main_handler.h">
+      <Filter>base\Cef3\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\browser\client_browser_app.h">
+      <Filter>base\Cef3\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\browser\main_message_loop.h">
+      <Filter>base\Cef3\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\common\cef_client_handler.h">
+      <Filter>base\Cef3\common</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\common\client_app.h">
+      <Filter>base\Cef3\common</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\common\process_message_handler.h">
+      <Filter>base\Cef3\common</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\control\UICefBrowser.h">
+      <Filter>base\Cef3\control</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\renderer\client_renderer_app.h">
+      <Filter>base\Cef3\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\renderer\client_v8handler.h">
+      <Filter>base\Cef3\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\renderer\v8_window_function.h">
+      <Filter>base\Cef3\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Cef3\cef_util.h">
+      <Filter>base\Cef3</Filter>
+    </ClInclude>
+    <ClInclude Include="base\ControlEx\ControlEx.h">
+      <Filter>base\ControlEx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="duicef-xuyc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\browser\client_browser_app.cpp">
+      <Filter>base\Cef3\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\browser\main_message_loop.cpp">
+      <Filter>base\Cef3\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\common\cef_client_handler.cpp">
+      <Filter>base\Cef3\common</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\common\cef_js_protocol.cpp">
+      <Filter>base\Cef3\common</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\common\client_app.cpp">
+      <Filter>base\Cef3\common</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\common\process_message_handler.cpp">
+      <Filter>base\Cef3\common</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\control\UICefBrowser.cpp">
+      <Filter>base\Cef3\control</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\renderer\client_renderer_app.cpp">
+      <Filter>base\Cef3\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="base\Cef3\renderer\client_v8handler.cpp">
+      <Filter>base\Cef3\renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
