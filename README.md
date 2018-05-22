@@ -1,2 +1,6 @@
 # DuiCEF
 duilib+cef3框架，已将cef封装成控件，支持XP系统下MP3、MP4播放
+
+# 注意
+基于：https://github.com/huminhuang/DuiCEF Latest commit 3a841fe on 23 Oct 2017  
+说明：  + 提取Demo项目中相关源码为单独的工程：duicef   这样即可在项目更方便的引入
